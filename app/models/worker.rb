@@ -1,7 +1,12 @@
 # frozen_string_literal: true
 
-class ApplicationRecord < ActiveRecord::Base
-  self.abstract_class = true
+class Worker < ApplicationRecord
+  #
+  # Enumerize
+  #
+  extend Enumerize
+  enumerize :status, in: %i[medic intern interim]
+
   #
   # Validations
   #
@@ -33,6 +38,9 @@ class ApplicationRecord < ActiveRecord::Base
   #
   # Public instance methods
   #
+  def display_name
+    first_name
+  end
 
   #
   # Protected instance methods
