@@ -1,0 +1,24 @@
+<% content_for(:title, 'Dashboard') %>
+<%= render "header" %>
+<div class="main-content-area">
+  <div class="main-content-container">
+    <div class="main-content">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="well well-sm">
+            <h4 class="mt0">Interim shifts</h4>
+            <p><%= @interim_shifts %></p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="well well-sm">
+            <h4 class="mt0">PDG fee</h4>
+            <p><%= @pdg_fee %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

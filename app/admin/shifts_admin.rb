@@ -2,7 +2,10 @@
 
 Trestle.resource(:shifts) do
   menu do
-    item :shifts, icon: 'fa fa-calendar-check'
+    item :shifts,
+         icon: 'fa fa-calendar-check',
+         priority: 3,
+         badge: { text: Shift.count }
   end
 
   # Customize the table columns shown on the index view.

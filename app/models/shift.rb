@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+
 class Shift < ApplicationRecord
   #
   # Validations
@@ -27,6 +28,7 @@ class Shift < ApplicationRecord
   #
   # Callbacks
   #
+  before_save :define_day_name
 
   #
   # Scopes
@@ -47,6 +49,11 @@ class Shift < ApplicationRecord
   #
   # Protected instance methods
   #
+  protected
+
+  def define_day_name
+    self.day_name = start_date&.strftime('%A')&.downcase
+  end
 end
 
 # == Schema Information
@@ -54,7 +61,8 @@ end
 # Table name: shifts
 #
 #  id          :bigint(8)        not null, primary key
-#  start_date  :date
+#  day_name    :string           not null
+#  start_date  :date             not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  planning_id :bigint(8)

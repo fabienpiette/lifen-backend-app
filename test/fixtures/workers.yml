@@ -7,12 +7,15 @@
 medic:
   first_name: Medic-One
   status: medic
+  paid: 270
 intern:
   first_name: Intern-One
   status: intern
+  paid: 126
 interim:
   first_name: Interim-One
   status: interim
+  paid: 480
 # column: value
 
 # == Schema Information
@@ -20,8 +23,9 @@ interim:
 # Table name: workers
 #
 #  id         :bigint(8)        not null, primary key
-#  first_name :string
-#  status     :string
+#  first_name :string           not null
+#  paid       :integer          default(0), not null
+#  status     :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

@@ -2,7 +2,10 @@
 
 Trestle.resource(:plannings) do
   menu do
-    item :plannings, icon: 'fa fas fa-calendar-alt'
+    item :plannings,
+         icon: 'fa fas fa-calendar-alt',
+         priority: 2,
+         badge: { text: Planning.count }
   end
 
   # Customize the table columns shown on the index view.

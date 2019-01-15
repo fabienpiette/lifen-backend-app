@@ -2,7 +2,14 @@
 
 Trestle.resource(:workers) do
   menu do
-    item :workers, icon: 'fa fa-users', priority: 2
+    item :workers,
+         icon: 'fa fa-users',
+         priority: 1,
+         badge: { text: Worker.count }
+  end
+
+  Worker.status.options.each do |trans, value|
+    scope trans.capitalize, -> { Worker.send(value.pluralize) }
   end
 
   # Customize the table columns shown on the index view.
@@ -16,8 +23,9 @@ Trestle.resource(:workers) do
   # Customize the form fields shown on the new/edit views.
   #
   form do |_worker|
-    text_field :first_name
-    select :status, Worker.status.options
+    text_field   :first_name
+    number_field :paid
+    select       :status, Worker.status.options
   end
 
   # By default, all parameters passed to the update and create actions will be
