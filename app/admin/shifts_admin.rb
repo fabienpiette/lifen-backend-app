@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 Trestle.resource(:shifts) do
   menu do
-    item :shifts, icon: "fa fa-calendar-check"
+    item :shifts, icon: 'fa fa-calendar-check'
   end
 
   # Customize the table columns shown on the index view.
@@ -13,7 +15,7 @@ Trestle.resource(:shifts) do
 
   # Customize the form fields shown on the new/edit views.
   #
-  form do |shift|
+  form do |_shift|
     date_field :start_date
     select :user_id, Worker.all
     select :planning_id, Planning.all

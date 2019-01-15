@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Trestle.resource(:workers) do
   menu do
     item :workers, icon: 'fa fa-users', priority: 2
@@ -13,7 +15,7 @@ Trestle.resource(:workers) do
 
   # Customize the form fields shown on the new/edit views.
   #
-  form do |worker|
+  form do |_worker|
     text_field :first_name
     select :status, Worker.status.options
   end

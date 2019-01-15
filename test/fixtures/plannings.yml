@@ -4,8 +4,18 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+one:
+  name: P1
+two:
+  name: P2
 # column: value
+
+# == Schema Information
 #
-two: {}
-# column: value
+# Table name: plannings
+#
+#  id         :bigint(8)        not null, primary key
+#  name       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#

@@ -4,8 +4,33 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+medic:
+  start_date: <%= Date.current %>
+  planning: one
+  worker: medic
+intern:
+  start_date: <%= Date.current %>
+  planning: one
+  worker: intern
+interim:
+  start_date: <%= Date.current %>
+  planning: one
+  worker: interim
 # column: value
+
+# == Schema Information
 #
-two: {}
-# column: value
+# Table name: shifts
+#
+#  id          :bigint(8)        not null, primary key
+#  start_date  :date
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  planning_id :bigint(8)
+#  user_id     :bigint(8)
+#
+# Indexes
+#
+#  index_shifts_on_planning_id  (planning_id)
+#  index_shifts_on_user_id      (user_id)
+#

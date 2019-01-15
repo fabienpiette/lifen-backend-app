@@ -4,8 +4,24 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+medic:
+  first_name: Medic-One
+  status: medic
+intern:
+  first_name: Intern-One
+  status: intern
+interim:
+  first_name: Interim-One
+  status: interim
 # column: value
+
+# == Schema Information
 #
-two: {}
-# column: value
+# Table name: workers
+#
+#  id         :bigint(8)        not null, primary key
+#  first_name :string
+#  status     :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#

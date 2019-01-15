@@ -10,10 +10,17 @@ class Worker < ApplicationRecord
   #
   # Validations
   #
+  validates :status,
+            presence: true
 
   #
   # Associations
   #
+  has_many :shifts,
+           class_name: 'Shift',
+           foreign_key: 'user_id',
+           dependent: :destroy,
+           inverse_of: :worker
 
   #
   # Through Associations
@@ -46,3 +53,14 @@ class Worker < ApplicationRecord
   # Protected instance methods
   #
 end
+
+# == Schema Information
+#
+# Table name: workers
+#
+#  id         :bigint(8)        not null, primary key
+#  first_name :string
+#  status     :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#

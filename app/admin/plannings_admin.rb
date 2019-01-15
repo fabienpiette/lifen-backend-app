@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 Trestle.resource(:plannings) do
   menu do
-    item :plannings, icon: "fa fas fa-calendar-alt"
+    item :plannings, icon: 'fa fas fa-calendar-alt'
   end
 
   # Customize the table columns shown on the index view.
@@ -13,7 +15,7 @@ Trestle.resource(:plannings) do
 
   # Customize the form fields shown on the new/edit views.
   #
-  form do |planning|
+  form do |_planning|
     text_field :name
   end
 
