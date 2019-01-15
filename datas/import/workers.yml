@@ -1,0 +1,11 @@
+---
+- first_name: Julie
+  status: medic
+- first_name: Marc
+  status: medic
+- first_name: Antoine
+  status: intern
+- first_name: Emilie
+  status: medic
+- first_name: Lea
+  status: interim

@@ -31,6 +31,7 @@ class Worker < ApplicationRecord
   #
   # Callbacks
   #
+  before_save :define_paid, if: proc { |w| w.paid.blank? }
 
   #
   # Scopes
@@ -42,6 +43,11 @@ class Worker < ApplicationRecord
   #
   # Supports
   #
+  PAID = {
+    medic: 270,
+    intern: 126,
+    interim: 480
+  }
 
   #
   # Public class methods
@@ -62,6 +68,10 @@ class Worker < ApplicationRecord
   # Protected instance methods
   #
   protected
+
+  def define_paid
+    self.paid = PAID[status.to_sym]
+  end
 
   def total_shifts_price
     (paid * 2 * weekend_shifts.length) + (paid * week_shifts.length)
